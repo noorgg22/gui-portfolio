@@ -59,6 +59,41 @@ function FadeIn({ children, delay = 0, className = "" }: {
   );
 }
 
+// ── Resume Modal ──────────────────────────────────────────────────────────────
+function ResumeModal({ onClose }: { onClose: () => void }) {
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[500] flex flex-col"
+      style={{ background: "rgba(8,8,8,0.96)", backdropFilter: "blur(20px)" }}>
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-6 py-4 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+        <span className="font-semibold text-sm" style={{ color: FG }}>Guilherme Trindade — Resume</span>
+        <div className="flex items-center gap-3">
+          <a href="/resume.pdf" download
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full text-[12px] font-semibold transition-all"
+            style={{ background: LIME, color: "#080808" }}>
+            Download ↓
+          </a>
+          <button onClick={onClose}
+            className="w-8 h-8 rounded-full flex items-center justify-center transition-all hover:bg-white/10"
+            style={{ color: "rgba(255,255,255,0.5)" }}>
+            <X size={16} />
+          </button>
+        </div>
+      </div>
+      {/* PDF viewer */}
+      <div className="flex-1 overflow-hidden">
+        <iframe
+          src="/resume.pdf"
+          className="w-full h-full"
+          style={{ border: 'none' }}
+          title="Resume"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 // ── Contact Modal ──────────────────────────────────────────────────────────────
 function ContactModal({ onClose }: { onClose: () => void }) {
   const [ce, setCe] = useState(false);
@@ -119,9 +154,9 @@ const NAV_ITEMS = [
 ];
 
 function LeftPanel({
-  active, onContact, scrollTo,
+  active, onContact, onResume, scrollTo,
 }: {
-  active: string; onContact: () => void; scrollTo: (id: string) => void;
+  active: string; onContact: () => void; onResume: () => void; scrollTo: (id: string) => void;
 }) {
   return (
     <motion.aside
@@ -143,7 +178,7 @@ function LeftPanel({
             Gui<br/>Trindade
           </h1>
           <p className="text-[12px] font-bold tracking-[0.1em]" style={{ color: LIME }}>
-            Bioinformatics × Software
+            Bioinformatics × Software × Sports
           </p>
         </div>
 
@@ -177,10 +212,10 @@ function LeftPanel({
           </span>
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-2">
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-            className="text-[11px] font-semibold transition-colors hover:text-white" style={{ color: MUTED }}>
+          <button onClick={onResume}
+            className="text-[11px] font-semibold transition-colors hover:text-white text-left" style={{ color: MUTED }}>
             Resume ↗
-          </a>
+          </button>
           <a href="https://linkedin.com/in/gui-trindade" target="_blank" rel="noopener noreferrer"
             className="text-[11px] font-semibold transition-colors hover:text-white" style={{ color: MUTED }}>
             LinkedIn ↗
@@ -224,7 +259,7 @@ function IntroSection() {
 }
 
 // ── About ──────────────────────────────────────────────────────────────────────
-function AboutSection() {
+function AboutSection({ onResume }: { onResume: () => void }) {
   return (
     <section id="about" className="px-16 pt-10 pb-10 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
       <FadeIn className="mb-8">
@@ -261,12 +296,12 @@ function AboutSection() {
           </FadeIn>
 
           <FadeIn delay={0.18}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+            <button onClick={onResume}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border transition-all duration-200 hover:border-white/30 hover:bg-white/5"
               style={{ borderColor: "rgba(255,255,255,0.12)", color: FG }}>
               <span className="text-[12px] font-semibold">Resume</span>
               <ArrowUpRight size={13} />
-            </a>
+            </button>
           </FadeIn>
         </div>
 
@@ -572,12 +607,15 @@ export default function Portfolio() {
   const [loaded, setLoaded]       = useState(false);
   const [contactOpen, setContact] = useState(false);
   const [thesisOpen, setThesis]   = useState(false);
+  const [resumeOpen, setResume]   = useState(false);
   const [active, setActive]       = useState("");
   const scrollRef                 = useRef<HTMLDivElement>(null);
   const openContact               = useCallback(() => setContact(true),  []);
   const closeContact              = useCallback(() => setContact(false), []);
   const openThesis                = useCallback(() => setThesis(true),   []);
   const closeThesis               = useCallback(() => setThesis(false),  []);
+  const openResume                = useCallback(() => setResume(true),   []);
+  const closeResume               = useCallback(() => setResume(false),  []);
 
   // Smooth scroll within the container
   const scrollTo = useCallback((id: string) => {
@@ -617,14 +655,18 @@ export default function Portfolio() {
         {thesisOpen && <ThesisModal onClose={closeThesis} />}
       </AnimatePresence>
 
+      <AnimatePresence>
+        {resumeOpen && <ResumeModal onClose={closeResume} />}
+      </AnimatePresence>
+
       {loaded && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
           className="flex h-screen overflow-hidden">
-          <LeftPanel active={active} onContact={openContact} scrollTo={scrollTo} />
+          <LeftPanel active={active} onContact={openContact} onResume={openResume} scrollTo={scrollTo} />
 
           {/* Scrollable right panel */}
           <div ref={scrollRef} className="h-screen overflow-y-auto flex-1" style={{ marginLeft: 340 }}>
-            <AboutSection />
+            <AboutSection onResume={openResume} />
             <ProjectsSection />
             <ResearchSection onThesisClick={openThesis} />
             <ContactSection onContact={openContact} />
