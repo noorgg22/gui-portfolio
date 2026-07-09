@@ -493,6 +493,45 @@ function ResearchSection({ onThesisClick }: { onThesisClick: () => void }) {
         </button>
       </FadeIn>
 
+      <FadeIn delay={0.15}>
+        <a href="https://frontend-theta-ten-29.vercel.app" target="_blank" rel="noopener noreferrer"
+          className="group block w-full text-left rounded-2xl p-8 border transition-all duration-400 hover:border-white/20 mb-6"
+          style={{ borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}>
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className="text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1.5 rounded-full"
+                  style={{ background: "rgba(163,230,53,0.15)", color: LIME, border: `1px solid ${LIME}` }}>
+                  Live Tool
+                </span>
+                <span className="text-[11px]" style={{ color: MUTED }}>2026</span>
+              </div>
+              <h3 className="font-[family-name:var(--font-syne)] font-bold text-xl mb-3 leading-snug tracking-tight" style={{ color: FG }}>
+                BioAgent — Agentic Bioinformatics Workbench
+              </h3>
+              <p className="text-[13px] font-light leading-relaxed mb-5" style={{ color: MUTED }}>
+                Upload RNA-seq count data, describe your experiment in plain English, and get a complete
+                differential expression analysis back automatically — ranked gene list, volcano plot, PCA,
+                KEGG pathway enrichment, and PubMed literature search. Built to demonstrate that
+                bioinformatics pipelines that normally take hours of scripting can be driven by a single sentence.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Claude AI", "FastAPI", "Python", "React", "Differential Expression", "Pathway Enrichment"].map(t => (
+                  <span key={t} className="text-[10px] font-semibold px-3 py-1 rounded-full border"
+                    style={{ borderColor: "rgba(255,255,255,0.09)", color: MUTED }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:border-white"
+              style={{ borderColor: "rgba(255,255,255,0.15)", color: MUTED }}>
+              <ArrowUpRight size={16} className="group-hover:text-black transition-colors" />
+            </div>
+          </div>
+        </a>
+      </FadeIn>
+
       <div className="grid grid-cols-3 gap-3">
         {[
           ["Genomics",   "RNA-seq · DESeq2 · edgeR · GSEA · scRNA-seq"],
