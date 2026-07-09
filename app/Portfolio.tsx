@@ -341,12 +341,6 @@ const PROJECTS = [
     tags: ["React", "TypeScript", "Sports API"],
     url: "https://worldcup-site.vercel.app",
   },
-  {
-    num: "04", name: "BioAgent", year: "2026", status: "Live",
-    desc: "Upload RNA-seq count data, ask a question in plain English, and get a full differential expression analysis back — volcano plot, PCA, ranked gene list, pathway enrichment, and supporting literature — all run automatically by an AI agent. Built to show that bioinformatics pipelines that normally take hours of scripting can be driven by a single sentence.",
-    tags: ["Claude AI", "FastAPI", "Python", "React", "DESeq2"],
-    url: "https://frontend-theta-ten-29.vercel.app",
-  },
 ];
 
 function ProjectRow({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
