@@ -1,0 +1,19 @@
+Guilherme (Gui) Trindade
+Bioinformatics PhD student building honest, useful AI for biology.
+
+PhD student, Bioinformatics & Computational Biology, George Mason University
+AI Safety Evaluation Contractor, Mercor (Aug 2026–present)
+M.S. Quantitative & Computational Biology, NYU (2025)
+B.S. Biological Sciences, University of Delaware
+
+Projects:
+- OmicsHonesty: AI honesty eval for bioinformatics (github.com/noorgg22/omics-honesty)
+- BioAgent: Agentic bioinformatics workbench (frontend-theta-ten-29.vercel.app)
+- Seatd: AI SMS front desk for salons (seatd-deploy.vercel.app)
+
+Contact:
+- Email: gui.becker.trindade@gmail.com
+- LinkedIn: linkedin.com/in/gui-trindade
+- GitHub: github.com/noorgg22
+- Portfolio: gui-portfolio-tau.vercel.app
+- CV: gui-portfolio-tau.vercel.app/Guilherme_Trindade_CV.pdf

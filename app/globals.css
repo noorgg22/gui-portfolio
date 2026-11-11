@@ -7,6 +7,8 @@ html { scroll-behavior: smooth; }
 body {
   background: #080808;
   color: #e8e2d4;
+  min-h-screen: 100dvh;
+  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
