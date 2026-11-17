@@ -23,7 +23,7 @@ export default function Page() {
             <div className="gap-2 flex flex-col order-2 md:order-1">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-[64px] font-[family-name:var(--font-display)]"
+                className="text-4xl font-bold sm:text-5xl lg:text-[64px] font-[family-name:var(--font-display)]"
                 yOffset={8}
                 text={`${DATA.name}`}
               />

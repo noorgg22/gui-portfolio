@@ -146,27 +146,27 @@
   }
 
   .prose h1 {
-    @apply text-2xl! font-semibold! tracking-tight! leading-tight!;
+    @apply text-2xl! font-semibold!  leading-tight!;
   }
 
   .prose h2 {
-    @apply text-xl! font-semibold! tracking-tight! leading-tight!;
+    @apply text-xl! font-semibold!  leading-tight!;
   }
 
   .prose h3 {
-    @apply text-lg! font-semibold! tracking-tight! leading-tight!;
+    @apply text-lg! font-semibold!  leading-tight!;
   }
 
   .prose h4 {
-    @apply text-base! font-medium! tracking-tight! leading-tight!;
+    @apply text-base! font-medium!  leading-tight!;
   }
 
   .prose h5 {
-    @apply text-base! font-medium! tracking-tight! leading-tight!;
+    @apply text-base! font-medium!  leading-tight!;
   }
 
   .prose h6 {
-    @apply text-base! font-medium! tracking-tight! leading-tight!;
+    @apply text-base! font-medium!  leading-tight!;
   }
 
   .prose a {
@@ -237,4 +237,6 @@
 
 h1, h2, h3 {
   font-family: var(--font-display), var(--font-sans), sans-serif;
+  word-spacing: 0.08em;
+  letter-spacing: -0.01em;
 }

@@ -30,7 +30,7 @@ export default function HackathonsSection() {
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
           </div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How I work</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">How I work</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {TRAITS.map((trait) => (
