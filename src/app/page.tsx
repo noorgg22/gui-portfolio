@@ -22,9 +22,9 @@ export default function Page() {
             <div className="gap-2 flex flex-col order-2 md:order-1">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-[64px] font-[family-name:var(--font-display)]"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+                text={`${DATA.name}`}
               />
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
@@ -32,14 +32,32 @@ export default function Page() {
                 text={DATA.description}
               />
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
-                <a
-                  href="/Guilherme_Trindade_CV.pdf"
-                  download
-                  className="mt-3 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium shadow-sm transition-colors hover:bg-accent"
-                >
-                  Download CV
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                </a>
+                <div className="flex flex-wrap items-center gap-3 mt-4">
+                  <a
+                    href="/Guilherme_Trindade_CV.pdf"
+                    download
+                    className="inline-flex items-center gap-2 rounded-full bg-[#0B7A57] px-4 py-1.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#096B4B]"
+                  >
+                    Download CV
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  </a>
+                  <a
+                    href="https://github.com/noorgg22"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-accent"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/gui-trindade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-accent"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">

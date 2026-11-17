@@ -4,20 +4,29 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
-const geist = Geist({
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-mono",
+const clashDisplay = localFont({
+  src: [
+    { path: "./fonts/ClashDisplay-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/ClashDisplay-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/ClashDisplay-Semibold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/ClashDisplay-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -66,8 +75,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
-          geist.variable,
-          geistMono.variable
+          satoshi.variable,
+          clashDisplay.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">

@@ -62,7 +62,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "AI Evaluation, Biology Expert & Generalist",
-      logoUrl: "", // TODO(gui): add Mercor logo
+      logoUrl: "/logos/mercor.png",
       start: "Aug 2026",
       end: "Present",
       description:
@@ -74,7 +74,7 @@ export const DATA = {
       badges: [],
       location: "New York, NY",
       title: "Graduate Researcher, Alemán Lab",
-      logoUrl: "", // TODO(gui): add NYU Langone logo
+      logoUrl: "/logos/nyu-langone.png",
       start: "Mar 2024",
       end: "Sep 2025",
       description:
@@ -86,7 +86,7 @@ export const DATA = {
       badges: [],
       location: "New York, NY",
       title: "Founder",
-      logoUrl: "", // TODO(gui): add Seatd logo
+      logoUrl: "/logos/seatd.png",
       start: "2025", // TODO(gui): confirm Seatd start date
       end: "Present",
       description:
@@ -98,7 +98,7 @@ export const DATA = {
       school: "George Mason University",
       href: "https://gmu.edu",
       degree: "PhD, Bioinformatics & Computational Biology (GPA 4.0)",
-      logoUrl: "", // TODO(gui): add GMU logo
+      logoUrl: "/logos/gmu.png",
       start: "2026",
       end: "Present",
     },
@@ -106,7 +106,7 @@ export const DATA = {
       school: "New York University",
       href: "https://nyu.edu",
       degree: "M.S. Quantitative & Computational Biology",
-      logoUrl: "", // TODO(gui): add NYU logo
+      logoUrl: "/logos/nyu.png",
       start: "2023",
       end: "2025",
     },
@@ -114,7 +114,7 @@ export const DATA = {
       school: "University of Delaware",
       href: "https://udel.edu",
       degree: "B.S. Biological Sciences",
-      logoUrl: "", // TODO(gui): add UDel logo
+      logoUrl: "/logos/udel.png",
       start: "", // TODO(gui): confirm UDel years
       end: "", // TODO(gui): confirm UDel years
     },
@@ -140,7 +140,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "", // TODO(gui): add OmicsHonesty screenshot
+      image: "/projects/omicshonesty.png",
       video: "",
     },
     {
@@ -169,7 +169,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "", // TODO(gui): add BioAgent screenshot
+      image: "/projects/bioagent.png",
       video: "",
     },
     {
@@ -192,7 +192,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "", // TODO(gui): add Seatd screenshot
+      image: "/projects/seatd.png",
       video: "",
     },
     {
@@ -215,7 +215,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "", // TODO(gui): add LeHoopIQ screenshot
+      image: "/projects/lehoopiq.png",
       video: "",
     },
     {
@@ -237,7 +237,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "", // TODO(gui): add World Cup screenshot
+      image: "/projects/worldcup.png",
       video: "",
     },
   ],
