@@ -14,7 +14,7 @@ export const DATA = {
   description:
     "I build AI for biology and test where it breaks. Bioinformatics PhD student in NYC.",
   summary:
-    "Bioinformatics PhD student at George Mason (evening program), M.S. in Quantitative & Computational Biology from NYU. I evaluate frontier AI models as a biology expert for Mercor, build tools scientists actually use, and founded a small business with paying customers. Born in São Paulo, grew up in Michigan and outside Philly. Former top college referee for the big games, which taught me to lead a room and own my calls.",
+    "Bioinformatics PhD student at George Mason and M.S. in Quantitative & Computational Biology from NYU. I evaluate frontier AI models as a biology expert for Mercor, build tools scientists actually use, and founded a small business with paying customers. Born in São Paulo, grew up in Michigan and outside Philly. Former top college referee for the big games, which taught me to lead a room and own my calls.",
   avatarUrl: "/gui-portrait.jpg",
   skills: [
     { name: "Python", icon: Python },
@@ -86,7 +86,7 @@ export const DATA = {
       badges: [],
       location: "New York, NY",
       title: "Founder",
-      logoUrl: "/logos/seatd.png",
+      logoUrl: "/logos/seatd.svg",
       start: "2025", // TODO(gui): confirm Seatd start date
       end: "Present",
       description:

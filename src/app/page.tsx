@@ -10,6 +10,7 @@ import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -22,7 +23,7 @@ export default function Page() {
             <div className="gap-2 flex flex-col order-2 md:order-1">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-[64px] font-[family-name:var(--font-display)]"
+                className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-[64px] font-[family-name:var(--font-display)]"
                 yOffset={8}
                 text={`${DATA.name}`}
               />
@@ -130,11 +131,11 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    <span>
-                      {education.start} - {education.end}
-                    </span>
-                  </div>
+                  {(education.start !== "" || education.end !== "") && (
+                    <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                      <span>{[education.start, education.end].filter(Boolean).join(" - ")}</span>
+                    </div>
+                  )}
                 </Link>
               </BlurFade>
             ))}
@@ -144,18 +145,53 @@ export default function Page() {
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <h2 className="text-xl font-bold">Skills & Tools</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-2">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                  {"icon" in skill && skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
-                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
-                </div>
-              </BlurFade>
-            ))}
-          </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 10}>
+            {/* TODO(gui): confirm and add any skills I'm missing */}
+            <Accordion type="single" collapsible defaultValue="bioinformatics" className="w-full">
+              <AccordionItem value="bioinformatics">
+                <AccordionTrigger className="text-sm font-semibold">Bioinformatics</AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {["RNA-seq", "Differential expression (DESeq2)", "Lipidomics", "Multi-omics integration", "Spatial omics", "Pathway enrichment"].map((s) => (
+                      <span key={s} className="border rounded-lg px-3 py-1 text-xs font-medium text-muted-foreground">{s}</span>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ai">
+                <AccordionTrigger className="text-sm font-semibold">AI & Evaluation</AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {["LLM evaluation", "AI agents", "Claude API", "Inspect AI", "Red-teaming"].map((s) => (
+                      <span key={s} className="border rounded-lg px-3 py-1 text-xs font-medium text-muted-foreground">{s}</span>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="languages">
+                <AccordionTrigger className="text-sm font-semibold">Languages</AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {["Python", "R", "SQL", "TypeScript"].map((s) => (
+                      <span key={s} className="border rounded-lg px-3 py-1 text-xs font-medium text-muted-foreground">{s}</span>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="web">
+                <AccordionTrigger className="text-sm font-semibold">Web & Product</AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {["React", "Next.js", "FastAPI", "n8n", "Twilio", "Stripe", "Vercel", "Git"].map((s) => (
+                      <span key={s} className="border rounded-lg px-3 py-1 text-xs font-medium text-muted-foreground">{s}</span>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </BlurFade>
         </div>
       </section>
       <section id="projects">
