@@ -51,7 +51,7 @@ export default function Page() {
                     GitHub
                   </a>
                   <a
-                    href="https://linkedin.com/in/gui-trindade"
+                    href="https://www.linkedin.com/in/gui-trindade/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-accent"
@@ -131,11 +131,9 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  {(education.start !== "" || education.end !== "") && (
-                    <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                      <span>{[education.start, education.end].filter(Boolean).join(" - ")}</span>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                    <span>{education.start} - {education.end}</span>
+                  </div>
                 </Link>
               </BlurFade>
             ))}

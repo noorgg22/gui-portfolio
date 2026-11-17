@@ -42,7 +42,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/gui-trindade", // TODO(gui): confirm exact LinkedIn URL
+        url: "https://www.linkedin.com/in/gui-trindade/",
         icon: Icons.linkedin,
         navbar: true,
       },
@@ -87,7 +87,7 @@ export const DATA = {
       location: "New York, NY",
       title: "Founder",
       logoUrl: "/logos/seatd.svg",
-      start: "2025", // TODO(gui): confirm Seatd start date
+      start: "2026",
       end: "Present",
       description:
         "AI text-message front desk for salons and barbershops. Bookings, reminders, missed-call recovery, and Google reviews. Two shops pay for it.",
@@ -115,8 +115,8 @@ export const DATA = {
       href: "https://udel.edu",
       degree: "B.S. Biological Sciences",
       logoUrl: "/logos/udel.png",
-      start: "", // TODO(gui): confirm UDel years
-      end: "", // TODO(gui): confirm UDel years
+      start: "2019",
+      end: "2022",
     },
   ],
   projects: [
