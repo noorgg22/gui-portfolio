@@ -14,7 +14,7 @@ export const DATA = {
   description:
     "I build AI for biology and test where it breaks. Bioinformatics PhD student in NYC.",
   summary:
-    "Bioinformatics PhD student at George Mason and M.S. in Quantitative & Computational Biology from NYU. I evaluate frontier AI models as a biology expert for Mercor, build tools scientists actually use, and founded a small business with paying customers. Born in São Paulo, grew up in Michigan and outside Philly. Off the clock, I was the top referee for my college's biggest games, which taught me to stay calm and make the call.",
+    "Bioinformatics PhD student at George Mason and M.S. in Quantitative & Computational Biology from NYU. I red-team frontier AI models for safety as a biology expert at Mercor, build tools scientists actually use, and founded a small business with paying customers. Born in São Paulo, grew up in Michigan and outside Philly. Off the clock, I was the top referee for my college's biggest games, and I love anything that mixes sports and data.",
   avatarUrl: "/gui-portrait.jpg",
   skills: [
     { name: "Python", icon: Python },
@@ -61,12 +61,12 @@ export const DATA = {
       href: "https://mercor.com",
       badges: [],
       location: "Remote",
-      title: "AI Evaluation, Biology Expert & Generalist",
+      title: "AI Safety & Evaluation, Biology Expert & Generalist",
       logoUrl: "/logos/mercor.png",
       start: "Aug 2026",
       end: "Present",
       description:
-        "Test frontier AI models on real scientific work and document where they fail. Design adversarial prompts, grade model outputs against structured rubrics, and classify conversations for policy-relevant risk signals.",
+        "Red-team and evaluate frontier AI models for safety on real scientific work, and document where they fail.",
     },
     {
       company: "NYU Langone Health",
